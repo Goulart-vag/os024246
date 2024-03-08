@@ -1,0 +1,321 @@
+object Form1: TForm1
+  Left = 533
+  Top = 148
+  Width = 842
+  Height = 657
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlFormulario: TPanel
+    Left = 0
+    Top = 176
+    Width = 825
+    Height = 257
+    Enabled = False
+    TabOrder = 0
+    object lblUF: TLabel
+      Left = 162
+      Top = 108
+      Width = 14
+      Height = 13
+      Caption = 'UF'
+    end
+    object lblTelefone: TLabel
+      Left = 450
+      Top = 38
+      Width = 42
+      Height = 13
+      Caption = 'Telefone'
+    end
+    object lblCelular: TLabel
+      Left = 458
+      Top = 108
+      Width = 32
+      Height = 13
+      Caption = 'Celular'
+    end
+    object edtNome: TLabeledEdit
+      Left = 160
+      Top = 56
+      Width = 133
+      Height = 21
+      EditLabel.Width = 28
+      EditLabel.Height = 13
+      EditLabel.Caption = 'Nome'
+      Enabled = False
+      TabOrder = 0
+    end
+    object edtEndereco: TLabeledEdit
+      Left = 160
+      Top = 100
+      Width = 133
+      Height = 21
+      EditLabel.Width = 37
+      EditLabel.Height = 13
+      EditLabel.Caption = 'Ende'#231'o'
+      Enabled = False
+      TabOrder = 1
+    end
+    object edtCidade: TLabeledEdit
+      Left = 160
+      Top = 212
+      Width = 133
+      Height = 21
+      EditLabel.Width = 33
+      EditLabel.Height = 13
+      EditLabel.Caption = 'Cidade'
+      Enabled = False
+      TabOrder = 2
+    end
+    object cmbUf: TComboBox
+      Left = 448
+      Top = 148
+      Width = 37
+      Height = 21
+      Enabled = False
+      ItemHeight = 13
+      TabOrder = 3
+      Text = 'UF'
+    end
+    object mdtTelefone: TMaskEdit
+      Left = 448
+      Top = 56
+      Width = 125
+      Height = 21
+      Enabled = False
+      EditMask = '!\(99\)00000-0000;1;_'
+      MaxLength = 14
+      TabOrder = 4
+      Text = '(  )     -    '
+    end
+    object mdtCelular: TMaskEdit
+      Left = 446
+      Top = 100
+      Width = 131
+      Height = 21
+      Enabled = False
+      EditMask = '!\(99\)00000-0000;1;_'
+      MaxLength = 14
+      TabOrder = 5
+      Text = '(  )     -    '
+    end
+    object edtBairro: TLabeledEdit
+      Left = 160
+      Top = 160
+      Width = 137
+      Height = 21
+      EditLabel.Width = 27
+      EditLabel.Height = 13
+      EditLabel.Caption = 'Bairro'
+      Enabled = False
+      TabOrder = 6
+    end
+  end
+  object pnlBotoes: TPanel
+    Left = 0
+    Top = 440
+    Width = 825
+    Height = 177
+    BiDiMode = bdLeftToRight
+    ParentBiDiMode = False
+    TabOrder = 1
+    object btnAdicionar: TButton
+      Left = 184
+      Top = 40
+      Width = 121
+      Height = 49
+      Caption = 'Adicionar'
+      TabOrder = 0
+      OnClick = btnAdicionarClick
+    end
+    object btnEditar: TButton
+      Left = 328
+      Top = 40
+      Width = 121
+      Height = 49
+      Caption = 'Editar'
+      TabOrder = 1
+      OnClick = btnEditarClick
+    end
+    object btnExcluir: TButton
+      Left = 472
+      Top = 40
+      Width = 121
+      Height = 49
+      Caption = 'Excluir'
+      TabOrder = 2
+      OnClick = btnExcluirClick
+    end
+    object btnSalvar: TButton
+      Left = 184
+      Top = 104
+      Width = 121
+      Height = 49
+      Caption = 'Salvar'
+      Enabled = False
+      TabOrder = 3
+      OnClick = btnSalvarClick
+    end
+    object btnCancelar: TButton
+      Left = 328
+      Top = 104
+      Width = 121
+      Height = 49
+      Caption = 'Cancelar'
+      Enabled = False
+      TabOrder = 4
+      OnClick = btnCancelarClick
+    end
+  end
+  object pnlPesquisa: TPanel
+    Left = 0
+    Top = 8
+    Width = 825
+    Height = 169
+    TabOrder = 2
+    object rgpFiltro: TRadioGroup
+      Left = 72
+      Top = 40
+      Width = 97
+      Height = 49
+      Caption = 'Filtro'
+      ItemIndex = 1
+      Items.Strings = (
+        'Telefone '
+        'Nome')
+      TabOrder = 0
+    end
+    object edtPesquisa: TEdit
+      Left = 224
+      Top = 56
+      Width = 233
+      Height = 21
+      TabOrder = 1
+      Text = 'pesquisa'
+      OnChange = edtPesquisaChange
+      OnEnter = edtPesquisaEnter
+    end
+    object btnBackup: TButton
+      Left = 608
+      Top = 48
+      Width = 137
+      Height = 25
+      Caption = 'btnBackup'
+      TabOrder = 2
+      OnClick = btnBackupClick
+    end
+    object btnRestore: TButton
+      Left = 608
+      Top = 96
+      Width = 137
+      Height = 25
+      Caption = 'btnRestore'
+      TabOrder = 3
+      OnClick = btnRestoreClick
+    end
+  end
+  object conection: TIBCConnection
+    Database = 
+      'C:\Users\Desenv4.SEO\Desktop\trabalhos de pesquisa\os024246\AGEN' +
+      'DA.FDB'
+    ClientLibrary = 
+      'C:\Users\Desenv4.SEO\Desktop\trabalhos de pesquisa\os024246\fbcl' +
+      'ient.dll'
+    Port = '3050'
+    Username = 'SYSDBA'
+    Password = '19983101'
+    Server = 'localhost'
+    Connected = True
+    Left = 32
+    Top = 112
+  end
+  object srcPessoa: TIBCDataSource
+    DataSet = qryPessoa
+    Left = 144
+    Top = 112
+  end
+  object qryPessoa: TIBCQuery
+    KeyFields = 'CD_PESSOA'
+    KeyGenerator = 'GEN_AGENDA'
+    SQLInsert.Strings = (
+      'INSERT INTO PESSOA'
+      
+        '  (CD_PESSOA, DS_PESSOA, DS_ENDERECO, DS_BAIRRO, DS_CIDADE, DS_U' +
+        'F, DS_TELEFONE, DS_CELULART)'
+      'VALUES'
+      
+        '  (:CD_PESSOA, :DS_PESSOA, :DS_ENDERECO, :DS_BAIRRO, :DS_CIDADE,' +
+        ' :DS_UF, :DS_TELEFONE, :DS_CELULART)')
+    SQLDelete.Strings = (
+      'DELETE FROM PESSOA'
+      'WHERE'
+      '  CD_PESSOA = :Old_CD_PESSOA')
+    SQLUpdate.Strings = (
+      'UPDATE PESSOA'
+      'SET'
+      
+        '  CD_PESSOA = :CD_PESSOA, DS_PESSOA = :DS_PESSOA, DS_ENDERECO = ' +
+        ':DS_ENDERECO, DS_BAIRRO = :DS_BAIRRO, DS_CIDADE = :DS_CIDADE, DS' +
+        '_UF = :DS_UF, DS_TELEFONE = :DS_TELEFONE, DS_CELULART = :DS_CELU' +
+        'LART'
+      'WHERE'
+      '  CD_PESSOA = :Old_CD_PESSOA')
+    SQLRefresh.Strings = (
+      
+        'SELECT CD_PESSOA, DS_PESSOA, DS_ENDERECO, DS_BAIRRO, DS_CIDADE, ' +
+        'DS_UF, DS_TELEFONE, DS_CELULART FROM PESSOA'
+      'WHERE'
+      '  CD_PESSOA = :CD_PESSOA')
+    SQLLock.Strings = (
+      'SELECT NULL FROM PESSOA'
+      'WHERE'
+      'CD_PESSOA = :Old_CD_PESSOA'
+      'FOR UPDATE WITH LOCK')
+    Connection = conection
+    SQL.Strings = (
+      'SELECT * FROM PESSOA')
+    Active = True
+    Left = 88
+    Top = 112
+    object qryPessoaCD_PESSOA: TIntegerField
+      FieldName = 'CD_PESSOA'
+    end
+    object qryPessoaDS_PESSOA: TStringField
+      FieldName = 'DS_PESSOA'
+      Required = True
+      Size = 60
+    end
+    object qryPessoaDS_ENDERECO: TStringField
+      FieldName = 'DS_ENDERECO'
+      Size = 60
+    end
+    object qryPessoaDS_BAIRRO: TStringField
+      FieldName = 'DS_BAIRRO'
+      Size = 30
+    end
+    object qryPessoaDS_CIDADE: TStringField
+      FieldName = 'DS_CIDADE'
+      Size = 30
+    end
+    object qryPessoaDS_UF: TStringField
+      FieldName = 'DS_UF'
+      FixedChar = True
+      Size = 2
+    end
+    object qryPessoaDS_TELEFONE: TStringField
+      FieldName = 'DS_TELEFONE'
+      Size = 15
+    end
+    object qryPessoaDS_CELULART: TStringField
+      FieldName = 'DS_CELULART'
+      Size = 15
+    end
+  end
+end
